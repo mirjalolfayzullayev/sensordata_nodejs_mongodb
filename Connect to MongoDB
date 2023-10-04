@@ -1,0 +1,13 @@
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://localhost:27017'; // Connection URL
+
+MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  const db = client.db('your_database_name'); // Replace with your database name
+  const collection = db.collection('your_collection_name'); // Replace with your collection name
+
+  // You're now connected to MongoDB and can start collecting data from sensors.
+});
